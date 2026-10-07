@@ -40,6 +40,7 @@ export type Screen =
   | { type: 'mission'; id: MissionId }
   | { type: 'reflection' }
   | { type: 'completion' }
+  | { type: 'certificate' }
   | { type: 'teacher' }
   | { type: 'about' };
 
