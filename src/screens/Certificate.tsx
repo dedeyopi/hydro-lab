@@ -78,10 +78,10 @@ export const CertificateScreen: React.FC<{
 
       {/* ===== SERTIFIKAT ===== */}
       <div
-        id="certificate-print"
-        className="relative bg-white rounded-2xl shadow-2xl overflow-hidden"
-        style={{ aspectRatio: '297 / 210' }}
-      >
+  id="certificate-print"
+  className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-full"
+  style={{ minHeight: 'min(75vw, 720px)' }}
+>
         {/* Border dekoratif */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-cyan-50" />
         <div className="absolute inset-3 border-[3px] border-sky-400 rounded-xl" />
