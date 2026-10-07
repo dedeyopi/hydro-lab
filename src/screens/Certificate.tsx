@@ -94,7 +94,7 @@ export const CertificateScreen: React.FC<{
         <CornerOrnament position="br" />
 
         {/* Konten utama */}
-        <div className="relative h-full flex flex-col p-10 md:p-14">
+        <div className="relative h-full flex flex-col p-8 md:p-12 print:p-6">
 
           {/* HEADER — Logo & Aplikasi */}
           <div className="flex items-start justify-between">
