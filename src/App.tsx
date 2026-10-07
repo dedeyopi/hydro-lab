@@ -77,8 +77,13 @@ const AppInner: React.FC = () => {
     }
 
     if (screen.type === 'completion') {
-      return <CompletionScreen onRestart={() => go({ type: 'map' })} />;
-    }
+  return (
+    <CompletionScreen
+      onRestart={() => go({ type: 'map' })}
+      onCertificate={() => go({ type: 'certificate' })}
+    />
+  );
+}
     if (screen.type === 'about') {
   return <DeveloperScreen onBack={() => go({ type: 'landing' })} />;
 }
