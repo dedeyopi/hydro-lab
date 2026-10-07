@@ -74,43 +74,52 @@ body {
 /* ===== PRINT STYLES FOR CERTIFICATE ===== */
 /* ===== PRINT STYLES FOR CERTIFICATE ===== */
 @media print {
-  html, body {
-    background: white !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 297mm !important;
-    height: 210mm !important;
-    overflow: hidden !important;
+  /* ===== PRINT STYLES FOR CERTIFICATE ===== */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
   }
 
-  /* Sembunyikan semua, tampilkan hanya sertifikat */
+  html, body {
+    width: 297mm !important;
+    height: 210mm !important;
+    max-height: 210mm !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Sembunyikan semua */
   body * {
     visibility: hidden !important;
   }
+
+  /* Tampilkan hanya sertifikat */
   #certificate-print,
   #certificate-print * {
     visibility: visible !important;
   }
 
-  /* Posisikan sertifikat di halaman */
+  /* PENTING: absolute (bukan fixed) supaya hanya 1 halaman */
   #certificate-print {
-    position: fixed !important;
-    left: 0 !important;
+    position: absolute !important;
     top: 0 !important;
+    left: 0 !important;
     width: 297mm !important;
     height: 210mm !important;
-    max-width: 297mm !important;
     max-height: 210mm !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
+    min-height: 0 !important;
     overflow: hidden !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
     page-break-after: avoid !important;
     page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
-  /* Sembunyikan elemen kontrol */
+  /* Sembunyikan kontrol */
   .no-print {
     display: none !important;
   }
@@ -121,9 +130,4 @@ body {
     print-color-adjust: exact !important;
     color-adjust: exact !important;
   }
-}
-
-@page {
-  size: A4 landscape;
-  margin: 0;
 }
