@@ -554,27 +554,28 @@ export const Mission08: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
         <div className="font-semibold text-slate-800 text-lg mb-4">{q.prompt}</div>
 
         {/* RENDER BY TYPE */}
-        {q.type === 'mc' && (
-          <MCRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'mc-complex' && (
-          <MCComplexRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'true-false' && (
-          <TFRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'matching' && (
-          <MatchingRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'fill' && (
-          <FillRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'numeric' && (
-          <NumericRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
-        {q.type === 'essay' && (
-          <EssayRender q={q} stored={stored} answered={answered} onSubmit={submit} />
-        )}
+        {/* RENDER BY TYPE */}
+{q.type === 'mc' && (
+  <MCRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'mc-complex' && (
+  <MCComplexRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'true-false' && (
+  <TFRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'matching' && (
+  <MatchingRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'fill' && (
+  <FillRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'numeric' && (
+  <NumericRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
+{q.type === 'essay' && (
+  <EssayRender key={q.id} q={q} stored={stored} answered={answered} onSubmit={submit} />
+)}
 
         {/* FEEDBACK */}
         {feedbackShown && answered && (
