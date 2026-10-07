@@ -12,7 +12,10 @@ const MASTERY = [
   { id: 'apply', label: 'Menerapkan konsep' },
 ];
 
-export const CompletionScreen: React.FC<{ onRestart: () => void }> = ({ onRestart }) => {
+export const CompletionScreen: React.FC<{ 
+  onRestart: () => void;
+  onCertificate: () => void;
+}> = ({ onRestart, onCertificate }) => {
   const { state } = useStore();
 
   const quizPercent = Math.round((state.quizScore / 10) * 100);
@@ -101,9 +104,13 @@ export const CompletionScreen: React.FC<{ onRestart: () => void }> = ({ onRestar
       </Card>
 
       <div className="mt-8 flex flex-wrap gap-3 justify-center">
-        <Button variant="secondary" onClick={onRestart}>Kembali ke Peta Misi</Button>
-        <Button onClick={() => window.print()}>🖨️ Cetak / Simpan PDF</Button>
-      </div>
+  <Button size="lg" onClick={onCertificate}>
+    🏆 Lihat Sertifikat Penyelesaian
+  </Button>
+  <Button variant="secondary" onClick={onRestart}>
+    Kembali ke Peta Misi
+  </Button>
+</div>
     </div>
   );
 };
