@@ -16,6 +16,7 @@ import { ReflectionScreen } from './screens/Reflection';
 import { CompletionScreen } from './screens/Completion';
 import { TeacherScreen } from './screens/Teacher';
 import { DeveloperScreen } from './screens/Developer';
+import { CertificateScreen } from './screens/Certificate';
 import { Screen, MissionId } from './types';
 
 const AppInner: React.FC = () => {
@@ -81,7 +82,14 @@ const AppInner: React.FC = () => {
     if (screen.type === 'about') {
   return <DeveloperScreen onBack={() => go({ type: 'landing' })} />;
 }
-
+if (screen.type === 'certificate') {
+  return (
+    <CertificateScreen
+      onBack={() => go({ type: 'completion' })}
+      onHome={() => go({ type: 'landing' })}
+    />
+  );
+}
     // screen.type === 'mission'
     switch (screen.id) {
       case 1:
